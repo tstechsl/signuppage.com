@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--<title>Responsive Regisration Form </title>--> 
+</head>
+<body>
+    <div class="container">
+        <header>Sign Up</header>
+
+        <form action="https://sheetdb.io/api/v1/udk2jj3zcd3np" method="post" id="sheetdb-form">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Personal Details</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Enter your name" name= "data[Full Name]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Date of Birth</label>
+                            <input type="date" placeholder="mm/dd/yyyy" name= "data[Date of Birth]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender</label>
+                            <input type="text" placeholder="Male or Female" name= "data[Gender]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number</label>
+                            <input type="number" placeholder="Enter mobile number" name= "data[Mobile Number]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Type you Email" name= "data[Email]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Username</label>
+                            <input type="text,number" placeholder="Enter Username" name= "data[Username]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Password</label>
+                            <input type="text,number" placeholder="Enter you Password" name= "data[Password]" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Confirm Password</label>
+                            <input type="text,number" placeholder="Confirm Password" name= "data[Confirm Password]" required>
+                        </div>
+                    </div>
+                </div>
+                    <span class="title">After Submit The form You will be directly sent to Sign In Page</span>
+
+                    <button class="SubmitBtn">
+                        <span class="btnText">Submit</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div> 
+            </div>
+        </form>
+        <script>
+            var form = document.getElementById('sheetdb-form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("sheetdb-form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            window.open('http://127.0.0.1:5500/Sign%20in%20Page/index.html', '_blank');
+
+          });
+        });
+        </script>
+
+    </div>        
+          <script>
+            const criptURL = 'https://script.google.com/macros/s/AKfycbznowZ9tFoCALvedL60roCCiu1w91-2RZhotq6NW5Yzaa9HMuUSd4BqmsO5K34-iNdG/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
